@@ -2,4 +2,11 @@
 require_once 'core/init.php';
 
 
-DB::getInstance()->query("SELECT username FROM users WHERE username = ?", array('Domagoj'));
+$user = DB::getInstance()->get('users', array('username', '=', 'Domagoj'));
+
+
+if (!$user->count()) {
+   echo 'No User';
+} else {
+  echo 'OK!';
+}
