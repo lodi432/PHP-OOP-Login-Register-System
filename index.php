@@ -2,9 +2,9 @@
 require_once 'core/init.php';
 
 
-$user = DB::getInstance()->insert('users',array(
-   'username' => 'Dale',
-   'password' => 'password',
-   'salt' => 'salt'
+$userInsert = DB::getInstance()->update('users', 3,array(
+   'password' => 'updatedpassword',
+   'name' => 'Dale abcdf'
+
 
 ));
